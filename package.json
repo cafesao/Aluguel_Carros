@@ -2,7 +2,6 @@
   "name": "aluguel_carros",
   "version": "1.0.0",
   "description": "Sistema para aluguel de carros",
-  "main": "index.js",
   "repository": "https://github.com/cafesao/Aluguel_Carros.git",
   "author": "cafesao <gabriel.diasdutra2@gmail.com>",
   "license": "apache-2.0",
@@ -26,6 +25,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
+    "server": "nodemon ./server/js/api.js",
     "prod": "webpack"
   }
 }

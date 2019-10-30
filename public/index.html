@@ -5,9 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aluguel de Carros</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="interface">
+        <h1>Aluguel de Carros</h1>
+        <div id="pesquisar">
+            <h1>Pesquisar veiculo, informe o modelo abaixo</h1>
+            <input type="search" id="modeloInput" placeholder="Informe o modelo" autofocus>
+            <button type="submit" id="pesquisarButton">Pesquisar</button>
+            <button type="submit" id="apagarButton">Apagar</button>
+            <div id="resultado"></div>
+        </div>
+        <div id="adicionar">
+            <h1>Para adicionar veiculo, informe os campos abaixo</h1>
+            <input type="search" id="modelInput" placeholder="Modelo (Obrigatório)">                        
+            <input type="search" id="marcaInput" placeholder="Marca (Obrigatório)">            
+            <input type="search" id="placaInput" placeholder="Placa">            
+            <input type="search" id="anoInput" placeholder="Ano de lançamento (Obrigatório)">            
+            <input type="search" id="kmInput" placeholder="KM rodados">    
+            <input type="search" id="precoInput" placeholder="Preço A Vista (Obrigatório)">
+            <input type="search" id="defeitosInput" placeholder="Defeitos">  
+            <br>  
+            <button type="submit" id="adicionarButton">Adicionar</button>              
+        </div>
+        <div id="carregandoDiv"></div>
+    </div>
 <script src="bundle.js"></script>
 </body>
 </html>

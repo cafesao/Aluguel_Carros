@@ -1,31 +1,39 @@
 import axios from 'axios'
-export { PesquisarCarro, LimparResultado }
+export { PesquisarCarro }
 
 let div = document.querySelector('div#resultado')
-const carro = {}
+
+let carro
 
 
 async function PesquisarCarro(modelo) {
-    LimparResultado()
-    Carregando(true)
-    const carroAxios = await axios.get(`http://localhost:3001/api/carros/${modelo}`)
-    if(carroAxios.data.length === 0) {
-        Carregando(false)
-        alert('[ERRO] Carro não encontrado!')
-    }
-    else {
-        Carregando(false)
-        for(let i = 0;i < carroAxios.data.length;i++){
-            const { modelo, marca, placa, anoLançamento, kmRodados, preco, defeito } = carroAxios.data[i]
-            carro.modelo = modelo
-            carro.marca = marca
-            carro.placa = placa
-            carro.anoLançamento = anoLançamento
-            carro.kmRodados = kmRodados
-            carro.preco = preco
-            carro.defeito = defeito
-            AdicionarResultado()
+    try {
+        Carregando(true)
+        const carroAxios = await axios.get(`http://localhost:3001/api/carros/${modelo}`)
+        if(carroAxios.data.length === 0) {
+            Carregando(false)
+            alert('[ERRO] Carro não encontrado!')
         }
+        else {
+            Carregando(false)
+            for(let i = 0;i < carroAxios.data.length;i++){
+                const { modelo, marca, placa, anoLançamento, kmRodados, preco, defeito } = carroAxios.data[i]
+                carro = {
+                    modelo,
+                    marca,
+                    placa,
+                    anoLançamento,
+                    kmRodados,
+                    preco,
+                    defeito
+                }
+    
+                AdicionarResultado()
+            }
+        }
+    }
+    catch(err) {
+        console.warn(err)
     }
 }
 
@@ -63,8 +71,8 @@ function AdicionarResultado() {
     let anoText = document.createTextNode(`Ano Lançamento: ${carro.anoLançamento}`) 
     let kmText = document.createTextNode(`Km Rodados: ${carro.kmRodados}`) 
     let precoVistaText = document.createTextNode(`Preço a vista: R$ ${carro.preco}`) 
-    let precoParcelado48Text = document.createTextNode(`Preço em 48x: R$ ${Divisão(48)}`) 
-    let precoParcelado72Text = document.createTextNode(`Preço em 72x: R$ ${Divisão(72)}`) 
+    let precoParcelado48Text = document.createTextNode(`Preço em 48x: R$ ${Divisão(carro, 48)}`) 
+    let precoParcelado72Text = document.createTextNode(`Preço em 72x: R$ ${Divisão(carro, 72)}`) 
     let defeitoText = document.createTextNode(`Defeito: ${carro.defeito}`)    
 
     modeloElement.appendChild(modeloText)
@@ -90,8 +98,8 @@ function AdicionarResultado() {
     div.appendChild(divCarro)
 }
 
-function Divisão(vezes) {
-    let preco = carro.preco
+function Divisão(objeto ,vezes) {
+    let preco = objeto.preco
     preco = LimparNumero(preco)
     preco = preco / vezes
 
@@ -110,8 +118,4 @@ function LimparNumero(numero) {
     }
 
     return numeroLimpo
-}
-
-function LimparResultado() {
-    div.innerHTML = ''
 }

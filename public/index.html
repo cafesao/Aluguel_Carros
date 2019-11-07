@@ -5,32 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aluguel de Carros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="interface">
+    <div id="interface" class="container-fluid mt-5">
         <h1>Aluguel de Carros</h1>
-        <div id="pesquisar">
+        <div id="pesquisar" class="container-fluid">
             <h1>Pesquisar veiculo, informe o modelo abaixo</h1>
-            <input type="search" id="modeloInput" placeholder="Informe o modelo" autofocus>
-            <button type="submit" id="pesquisarButton">Pesquisar</button>
-            <button type="submit" id="apagarButton">Apagar</button>
+            <input type="search" id="modeloInput" class="form-control" placeholder="Informe o modelo" autofocus>
+            <br>
+            <button type="submit" id="pesquisarButton" class="btn btn-primary">Pesquisar</button>
+            <button type="submit" id="apagarButton" class="btn btn-danger">Apagar</button>
             <div id="resultado"></div>
         </div>
-        <div id="adicionar">
+        <div id="adicionar" class="container-fluid">
             <h1>Para adicionar veiculo, informe os campos abaixo</h1>
-            <input type="search" id="modelInput" placeholder="Modelo (Obrigatório)">                        
-            <input type="search" id="marcaInput" placeholder="Marca (Obrigatório)">            
-            <input type="search" id="placaInput" placeholder="Placa">            
-            <input type="search" id="anoInput" placeholder="Ano de lançamento (Obrigatório)">            
-            <input type="search" id="kmInput" placeholder="KM rodados">    
-            <input type="search" id="precoInput" placeholder="Preço A Vista (Obrigatório)">
-            <input type="search" id="defeitosInput" placeholder="Defeitos">  
+            <input type="search" id="modelInput" class="form-control" placeholder="Modelo (Obrigatório)">                        
+            <input type="search" id="marcaInput" class="form-control" placeholder="Marca (Obrigatório)">            
+            <input type="search" id="placaInput" class="form-control" placeholder="Placa">            
+            <input type="search" id="anoInput" class="form-control" placeholder="Ano de lançamento (Obrigatório)">            
+            <input type="search" id="kmInput" class="form-control" placeholder="KM rodados">    
+            <input type="search" id="precoInput" class="form-control" placeholder="Preço A Vista (Obrigatório)">
+            <input type="search" id="defeitosInput" class="form-control" placeholder="Defeitos">  
             <br>  
-            <button type="submit" id="adicionarButton">Adicionar</button>              
+            <button type="submit" id="adicionarButton" class="btn btn-success">Adicionar</button>              
         </div>
-        <div id="carregandoDiv"></div>
+        <div id="carregandoDiv" class="container-fluid"></div>
     </div>
-<script src="bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="bundle.js"></script>
 </body>
 </html>

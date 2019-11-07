@@ -4,18 +4,18 @@
 ### Quem é esse tal de Cafesão? :question:
 
 Ola, meu nome é Gabriel, apelido **Cafesão**.
-Sou apenas um cara que **ama programar** e gosta de desafios, e desta vez e quase a mesma coisa dos meus projetos passados usando MongoDB + NodeJS + JS, então para não ficar repetitivo, acessem [Lista de Games](https://github.com/cafesao/Lista_Games).
+Sou apenas um cara que **ama programar** e gosta de desafios, e desta vez é um projeto parecido com os projetos passados usando MongoDB + NodeJS + JS, então para não ficar repetitivo, acessem [Lista de Games](https://github.com/cafesao/Lista_Games) para mais informações.
 
 ### O que se passa neste projeto :question:
 
-Ele e feito para uma revendedora de carros por exemplo, ou uma concessionária, enfim, algo relacionando a veículos em gerais, tendo o back-end configurado, ele retorna os dados de Modelo, Marca, Preço e etc.
+Este projeto é feito para uma revendedora de carros por exemplo, ou uma concessionária, enfim, algo relacionando a veículos em geral, tendo o back-end configurado, ele retorna os dados de Modelo, Marca, Preço e etc.
 
 ### E como faço para rodar? :open_mouth:
 > Isso também esta no repositório Lista de Games ;)
 
 Primeiramente você precisa ter o [Yarn](https://yarnpkg.com/pt-BR/) instalado, junto com o [Node.JS](https://nodejs.org/pt-br/).
 
-Feito isso e verificado se o Yarn e o Node.JS esta devidamente instalado, e só entrar na pasta raiz via terminal e colocar o comando `yarn install`, feito isso ele ira instalar todas as dependências.
+Feito isso e verificado se o Yarn e o Node.JS esta devidamente instalado, e só entrar na pasta raiz via terminal e colocar o comando `yarn install`, feito isso o Yarn ira instalar todas as dependências.
 
 Explicação do comando:
 

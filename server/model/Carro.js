@@ -15,7 +15,7 @@ const CarroSchema = new mongo.Schema ({
         default: 'Sem Placa'
     },
     anoLançamento: {
-        type: Number,
+        type: String,
         required: true 
     },
     kmRodados: {

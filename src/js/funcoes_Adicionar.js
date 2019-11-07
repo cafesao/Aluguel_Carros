@@ -2,24 +2,24 @@ import axios from 'axios'
 export { PrepararTags }
 const carro = {}
 
-async function Adicionar(modeloInput, marcaInput, placaInput, anoInput, kmInput, precoInput, defeitosInput) {
+async function Adicionar(modelo, marca, placa, ano, kmRodados, preco, defeito) {
     try{
-        if(placaInput.length > 0) {
-            carro.placa = placaInput
+        if(placa.length > 0) {
+            carro.placa = placa
         }
-        if(kmInput.length > 0) {
-            carro.kmRodados = kmInput
+        if(kmRodados.length > 0) {
+            carro.kmRodados = kmRodados
+            
         }
-        if(defeitosInput.length > 0) {
-            carro.defeito = defeitosInput
+        if(defeito.length > 0) {
+            carro.defeito = defeito
         }
 
-        carro.modelo = modeloInput
-        carro.marca = marcaInput
-        carro.anoLançamento = Number(anoInput)
-        carro.preco = precoInput
+        carro.modelo = modelo
+        carro.marca = marca
+        carro.anoLançamento = Number(ano)
+        carro.preco = preco
         
-        console.log(carro)
         await axios.post('http://localhost:3001/api/carros', carro)
        
         alert('Seu carro foi adicionado!')
@@ -29,12 +29,12 @@ async function Adicionar(modeloInput, marcaInput, placaInput, anoInput, kmInput,
     }
 }
 
-function PrepararTags(modeloInput, marcaInput, placaInput, anoInput, kmInput, precoInput, defeitosInput) {
-    if(placaInput.length === 0) {
-        carro.tags = [modeloInput.toUpperCase(), marcaInput.toUpperCase()]
+function PrepararTags(modelo, marca, placa, ano, kmRodados, preco, defeito) {
+    if(placa.length === 0) {
+        carro.tags = [modelo.toUpperCase(), marca.toUpperCase()]
     }
     else {
-        carro.tags = [modeloInput.toUpperCase(), marcaInput.toUpperCase(), placaInput.toUpperCase()]
+        carro.tags = [modelo.toUpperCase(), marca.toUpperCase(), placa.toUpperCase()]
     }
-    Adicionar(modeloInput, marcaInput, placaInput, anoInput, kmInput, precoInput, defeitosInput)
+    Adicionar(modelo, marca, placa, ano, kmRodados, preco, defeito)
 }

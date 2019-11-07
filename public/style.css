@@ -10,7 +10,7 @@ div#interface{
     margin: 0 auto;
     height: auto;
     width: 700px;
-    background-color: white;
+    background-color: rgb(206, 168, 255);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.568);
     border-radius: 10px;
     align-items: center;
